@@ -9,9 +9,10 @@ app.use(express.json())
 app.post("/addName",async(req,res)=>{
     const {name} =req.body
     console.log(name)
-   
+   //to convert into smallcase 
+    //const smallcase=name.toLowerCase()
     try{
-
+        //const result=await=userModel.create({name:smallcase})
         const result=await usersModel.create({name})
         res.status(200).json({status:"success",result})
     }catch(err){
